@@ -67,7 +67,7 @@ namespace Task_Management_System.SqlHelper
 
 
         // Thực thi store để lấy về dữ liệu (Get data)
-        public DataTable ExcuteReader(string p_strProcedure_Name, params object[] procedureParams)
+        public DataTable ExecuteReader(string p_strProcedure_Name, params object[] procedureParams)
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionSTR))

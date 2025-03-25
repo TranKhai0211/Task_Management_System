@@ -31,10 +31,16 @@
             set { project_Description = value; }
         }
 
+        public int Status_Id
+        {
+            get { return status_Id; }
+            set { status_Id = value; }
+        }
+
         public int Created_By_User_Id
         {
-            get { return Created_By_User_Id; }
-            set { Created_By_User_Id = value; }
+            get { return created_By_User_Id; }
+            set { created_By_User_Id = value; }
         }
 
         public DateTime Created_Date
@@ -46,7 +52,7 @@
         public int Last_Updated_By_User_Id
         {
             get { return last_Updated_By_User_Id; }
-            set { Last_Updated_By_User_Id = value; }
+            set { last_Updated_By_User_Id = value; }
         }
 
         public DateTime Last_Updated_Date
