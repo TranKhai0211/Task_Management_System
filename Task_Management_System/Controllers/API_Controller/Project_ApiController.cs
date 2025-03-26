@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Task_Management_System.Controllers.MVC_Controller;
 using Task_Management_System.Entities.Data;
 
 namespace Task_Management_System.Controllers.API_Controller
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class Project_ApiController : ControllerBase
