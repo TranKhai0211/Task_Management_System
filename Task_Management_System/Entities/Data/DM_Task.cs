@@ -1,6 +1,6 @@
 ﻿namespace Task_Management_System.Entities.Data
 {
-    public class Task
+    public class DM_Task
     {
         private int id;
         private string task_Name;
@@ -81,7 +81,7 @@
         public int Created_By_User_Id
         {
             get { return created_By_User_Id; }
-            set { Created_By_User_Id = value; }
+            set { created_By_User_Id = value; }
         }
 
         public DateTime Created_Date
@@ -93,7 +93,7 @@
         public int Last_Updated_By_User_Id
         {
             get { return last_Updated_By_User_Id; }
-            set { Last_Updated_By_User_Id = value; }
+            set { last_Updated_By_User_Id = value; }
         }
 
         public DateTime Last_Updated_Date

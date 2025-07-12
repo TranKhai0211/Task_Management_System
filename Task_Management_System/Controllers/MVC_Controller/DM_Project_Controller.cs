@@ -5,13 +5,13 @@ using Task_Management_System.Utilities;
 
 namespace Task_Management_System.Controllers.MVC_Controller
 {
-    public class Project_Controller
+    public class DM_Project_Controller
     {
-        Data_Provider dataProvider = new Data_Provider();
+        Data_Provider dataProvider = Data_Provider.Instance;
 
-        public List<Project> Get_All_Project()
+        public List<DM_Project> Get_All_Project()
         {
-            List<Project> lstProjects = new List<Project>();
+            List<DM_Project> lstProjects = new List<DM_Project>();
             DataTable dt = new DataTable();
 
             try
@@ -20,7 +20,7 @@ namespace Task_Management_System.Controllers.MVC_Controller
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Project objProject = Utility.Map_Row_To_Entity<Project>(dr);
+                    DM_Project objProject = Utility.Map_Row_To_Entity<DM_Project>(dr);
                     lstProjects.Add(objProject);
                 }
             }
@@ -36,9 +36,9 @@ namespace Task_Management_System.Controllers.MVC_Controller
             return lstProjects;
         }
 
-        public Project Get_Project_By_Id(int p_Id)
+        public DM_Project Get_Project_By_Id(int p_Id)
         {
-            Project objProject = null;
+            DM_Project objProject = null;
             DataTable dt = new DataTable();
 
             try
@@ -46,7 +46,7 @@ namespace Task_Management_System.Controllers.MVC_Controller
                 dt = dataProvider.ExecuteReader("sp_sel_Get_Project_By_Id", p_Id);
 
                 if (dt.Rows.Count != 0)
-                    objProject = Utility.Map_Row_To_Entity<Project>(dt.Rows[0]);
+                    objProject = Utility.Map_Row_To_Entity<DM_Project>(dt.Rows[0]);
             }
              catch (Exception)
             {
@@ -57,7 +57,7 @@ namespace Task_Management_System.Controllers.MVC_Controller
             return objProject;
         }
 
-        public void Insert_Project(Project p_objProject)
+        public void Insert_Project(DM_Project p_objProject)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace Task_Management_System.Controllers.MVC_Controller
             }
         }
 
-        public void Update_Project(Project p_objProject)
+        public void Update_Project(DM_Project p_objProject)
         {
             try
             {

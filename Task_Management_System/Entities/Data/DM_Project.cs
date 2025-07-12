@@ -1,6 +1,6 @@
 ﻿namespace Task_Management_System.Entities.Data
 {
-    public class Project
+    public class DM_Project
     {
         private int id;
         private string project_Name;

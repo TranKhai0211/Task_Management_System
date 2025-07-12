@@ -8,8 +8,23 @@ namespace Task_Management_System.SqlHelper
     {
         private string connectionSTR = "Data Source=MSI\\SQLSERVER;Initial Catalog=TaskManagementSystem;Integrated Security=true";
 
+        private static Data_Provider dtProvider = new Data_Provider();
+
+        public static Data_Provider Instance
+        {
+            get
+            {
+                return Data_Provider.dtProvider;
+            }
+        }
+
+        private Data_Provider()
+        {
+
+        }
+
         // Hàm lấy thông tin Store Procedure
-        public List<Procedure_Param> Get_Store_Procedure_Param_Info(string p_strSP_Name)
+        private List<Procedure_Param> Get_Store_Procedure_Param_Info(string p_strSP_Name)
         {
             List<Procedure_Param> arrPP = new List<Procedure_Param>();
 
@@ -45,7 +60,7 @@ namespace Task_Management_System.SqlHelper
 
 
         // Hàm thiết lập tham số cho SqlCommand
-        public void Set_Procedure_Parameters(SqlCommand p_cmd, string p_strProcedure_Name, params object[] procedureParams)
+        private void Set_Procedure_Parameters(SqlCommand p_cmd, string p_strProcedure_Name, params object[] procedureParams)
         {
             List<Procedure_Param> arrProcedure_Params = Get_Store_Procedure_Param_Info(p_strProcedure_Name);
             int paramCount = arrProcedure_Params.Count;
