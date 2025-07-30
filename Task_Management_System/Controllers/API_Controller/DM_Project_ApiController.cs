@@ -31,10 +31,8 @@ namespace Task_Management_System.Controllers.API_Controller
                 objRes.Deleted = p.Deleted;
                 lstRes.Add(objRes);
             }
-            
 
             return Ok(lstRes);
-
         }
 
         // Lấy thông tin dự án theo Id
